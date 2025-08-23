@@ -1,0 +1,93 @@
+/* ------------- RESET & GLOBAL ------------- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    color:#222;
+    background:#fafafa;
+}
+a{color:#0059ff;text-decoration:none;}
+a:hover{color:#ff3b30;text-decoration:underline;}
+h1,h2,h3{color:#111;}
+img{max-width:100%;height:auto;display:block;}
+.container{max-width:1100px;margin:auto;padding:0 20px;}
+section{padding:60px 0;}
+
+/* ------------- NAV ------------- */
+header{
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.logo{font-size:1.4rem;font-weight:700;}
+nav ul{display:flex;gap:25px;list-style:none;}
+nav ul li a{padding:8px 0;font-weight:500;position:relative;}
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:0;width:0;height:2px;background:#ff3b30;transition:.3s;
+}
+nav ul li a:hover::after{width:100%;}
+
+/* ------------- HERO ------------- */
+.hero{
+    background:url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:120px 20px;
+}
+.hero h1{font-size:2.8rem;margin-bottom:15px;}
+.hero p{font-size:1.2rem;margin-bottom:25px;}
+.btn{
+    display:inline-block;
+    background:#ff3b30;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:4px;
+    font-weight:600;
+}
+.btn:hover{background:#e02c20;color:#fff;}
+
+/* ------------- GRIDS ------------- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.three-col{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+
+/* ------------- FORMS ------------- */
+form{max-width:600px;margin:auto;}
+input,textarea{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+button[type="submit"]{
+    background:#0059ff;
+    color:#fff;
+    border:none;
+    padding:12px 25px;
+    border-radius:4px;
+    cursor:pointer;
+}
+button[type="submit"]:hover{background:#0044cc;}
+
+/* ------------- FOOTER ------------- */
+footer{
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:30px 0;
+}
+footer .social a{margin:0 10px;font-size:1.6rem;color:#ccc;}
+footer .social a:hover{color:#fff;}
+
+/* ------------- RESPONSIVE ------------- */
+@media(max-width:768px){
+    nav ul{flex-direction:column;background:#fff;position:absolute;top:70px;left:0;width:100%;display:none;}
+    nav ul.show{display:flex;padding-bottom:20px;}
+    .two-col{grid-template-columns:1fr;}
+    .hero h1{font-size:2rem;}
+}
